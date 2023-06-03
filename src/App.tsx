@@ -24,8 +24,8 @@ function App() {
   const { data, error } = useQuery(GET_SAMPLE_QUERY);
 
   console.log(data, error);
-  // -> undefined undefined
-  // It is preferable to display doesn't exist error
+  // to be console -> undefined undefined
+  // It is preferable to display doesn't existing field error
 
   return (
     <>
