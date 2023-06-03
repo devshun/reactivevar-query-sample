@@ -12,6 +12,8 @@ const GET_SAMPLE_QUERY = gql`
       email
       isActive
       createdAt
+      # add unknown fields
+      unknownField
     }
   }
 `;
@@ -19,9 +21,11 @@ const GET_SAMPLE_QUERY = gql`
 function App() {
   const [count, setCount] = useState(0);
 
-  const { data } = useQuery(GET_SAMPLE_QUERY);
+  const { data, error } = useQuery(GET_SAMPLE_QUERY);
 
-  console.log(data);
+  console.log(data, error);
+  // -> undefined undefined
+  // It is preferable to display doesn't exist error
 
   return (
     <>
