@@ -1,10 +1,27 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from "react";
+import reactLogo from "./assets/react.svg";
+import viteLogo from "/vite.svg";
+import "./App.css";
+import { gql, useQuery } from "@apollo/client";
+
+const GET_SAMPLE_QUERY = gql`
+  query {
+    sample @client {
+      id
+      name
+      email
+      isActive
+      createdAt
+    }
+  }
+`;
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
+
+  const { data } = useQuery(GET_SAMPLE_QUERY);
+
+  console.log(data);
 
   return (
     <>
@@ -29,7 +46,7 @@ function App() {
         Click on the Vite and React logos to learn more
       </p>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
