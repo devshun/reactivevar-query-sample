@@ -1,0 +1,11 @@
+type Sample {
+  id: Int!
+  name: String!
+  email: String!
+  isActive: Boolean!
+  createdAt: String!
+}
+
+type Query {
+  sample: Sample
+}

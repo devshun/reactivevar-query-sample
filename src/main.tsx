@@ -7,7 +7,6 @@ import {
   InMemoryCache,
   ApolloProvider,
   makeVar,
-  gql,
 } from "@apollo/client";
 
 type SampleVar = {
@@ -38,23 +37,8 @@ const cache: InMemoryCache = new InMemoryCache({
   },
 });
 
-const typeDefs = gql`
-  type Sample {
-    id: Int!
-    name: String!
-    email: String!
-    isActive: Boolean!
-    createdAt: String!
-  }
-
-  extend type Query {
-    sample: Sample
-  }
-`;
-
 const client = new ApolloClient({
   cache,
-  typeDefs,
 });
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(

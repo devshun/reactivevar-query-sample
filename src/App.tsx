@@ -4,20 +4,6 @@ import viteLogo from "/vite.svg";
 import "./App.css";
 import { gql, useQuery } from "@apollo/client";
 
-const GET_SAMPLE_QUERY = gql`
-  query {
-    sample @client {
-      id
-      name
-      email
-      isActive
-      createdAt
-      # add unknown fields
-      unknownField
-    }
-  }
-`;
-
 function App() {
   const [count, setCount] = useState(0);
 

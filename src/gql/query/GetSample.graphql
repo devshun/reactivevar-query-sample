@@ -1,0 +1,11 @@
+query GET_SAMPLE_QUERY {
+  sample @client {
+    id
+    name
+    email
+    isActive
+    createdAt
+    # add unknown fields
+    unknownField
+  }
+}
