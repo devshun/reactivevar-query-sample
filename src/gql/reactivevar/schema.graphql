@@ -6,6 +6,6 @@ type Sample {
   createdAt: String!
 }
 
-type Query {
+extend type Query {
   sample: Sample
 }
