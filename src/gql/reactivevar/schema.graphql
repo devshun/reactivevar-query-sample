@@ -4,6 +4,8 @@ type Sample {
   email: String!
   isActive: Boolean!
   createdAt: String!
+  # this field is not defined in reacttivevar
+  unknownField: String!
 }
 
 extend type Query {

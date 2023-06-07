@@ -3,11 +3,12 @@ import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
 import { gql, useQuery } from "@apollo/client";
+import { Get_Sample_QueryDocument } from "./gql/generated/graphql";
 
 function App() {
   const [count, setCount] = useState(0);
 
-  const { data, error } = useQuery(GET_SAMPLE_QUERY);
+  const { data, error } = useQuery(Get_Sample_QueryDocument);
 
   console.log(data, error);
   // to be console -> undefined undefined
